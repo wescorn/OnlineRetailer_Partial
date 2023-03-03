@@ -11,6 +11,11 @@ namespace OrderApi.Controllers
     [Route("[controller]")]
     public class OrdersController : ControllerBase
     {
+        /*
+         *  See an overview of past orders incl. order status
+            Cancel orders that haven't been dispatched
+            Make an Order - OrderApi
+         */
         private readonly IRepository<Order> repository;
 
         public OrdersController(IRepository<Order> repos)
