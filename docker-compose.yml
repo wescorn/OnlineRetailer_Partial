@@ -1,21 +1,22 @@
-version: "3.9"
+version: '3.4'
 
 services:
   customerapi:
+    image: ${DOCKER_REGISTRY-}customerapi
     build:
       context: .
-      dockerfile: "CustomerApi/Dockerfile"
-    ports:
-      - 9000:80
+      dockerfile: CustomerApi/Dockerfile
+
   orderapi:
+    image: ${DOCKER_REGISTRY-}orderapi
     build:
       context: .
-      dockerfile: "OrderApi/Dockerfile"
-    ports:
-      - 9001:80
+      dockerfile: OrderApi/Dockerfile
+
+
   productapi:
+    image: ${DOCKER_REGISTRY-}productapi
     build:
       context: .
-      dockerfile: "ProductApi/Dockerfile"
-    ports:
-      - 9002:80
+      dockerfile: ProductApi/Dockerfile
+
