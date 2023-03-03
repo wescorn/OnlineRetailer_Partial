@@ -35,16 +35,20 @@ namespace CustomerApi.Controllers
     {
         // register a custoemr
         [HttpPost]
-        public void register(string companyName, string registrationNumber, string emailAddress, string phoneNumber, Address billingAddress, Address shippingAddress)
+        public IActionResult Post ([FromBody] Customer Customer)
         {
             //Implement
+
+            return NoContent();
         }
 
         // change customer information
         [HttpPut]
-        public void change(string emailAddress, string phoneNumber, Address billingAddress, Address shippingAddress)
+        public IActionResult Put ([FromBody] Customer Customer)
         {
             //Implement
+
+            return NoContent();
         }
     }
 }
