@@ -26,9 +26,9 @@ namespace CustomerApi.Data
             db.SaveChanges();
         }
 
-        Customer IRepository<Customer>.Get(int registrationNumber)
+        Customer IRepository<Customer>.Get(int id)
         {
-            return db.Customers.FirstOrDefault(o => o.registrationNumber == registrationNumber);
+            return db.Customers.FirstOrDefault(o => o.Id == id);
         }
 
         IEnumerable<Customer> IRepository<Customer>.GetAll()
@@ -36,9 +36,9 @@ namespace CustomerApi.Data
             return db.Customers.ToList();
         }
 
-        void IRepository<Customer>.Remove(int registrationNumber)
+        void IRepository<Customer>.Remove(int id)
         {
-            var customer = db.Customers.FirstOrDefault(p => p.registrationNumber == registrationNumber);
+            var customer = db.Customers.FirstOrDefault(p => p.Id == id);
             db.Customers.Remove(customer);
             db.SaveChanges();
         }

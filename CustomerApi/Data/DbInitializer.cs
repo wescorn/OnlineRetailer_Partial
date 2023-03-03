@@ -21,7 +21,7 @@ namespace CustomerApi.Data
 
             List<Customer> customer = new List<Customer>
             {
-                new Customer { companyName = "Bad Company", registrationNumber = 1, emailAddress = "bcompanyofficial@bcompany.com", phoneNumber = "51223432" } // TODO Need Default Billing and Shipping Address
+                new Customer { CompanyName = "Bad Company", RegistrationNumber = 1, EmailAddress = "bcompanyofficial@bcompany.com", PhoneNumber = "51223432", DefaultBillingAddress = "54 downingstreet 5400 London", DefaultShippingAddress = "54 downingstreet 5400 London" }
             };
 
             context.Customers.AddRange(customer);

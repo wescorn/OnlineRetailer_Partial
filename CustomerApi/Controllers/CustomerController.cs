@@ -39,6 +39,11 @@ namespace CustomerApi.Controllers
     {
         private readonly IRepository<Customer> repository;
 
+        public CustomerController(IRepository<Customer> repos)
+        {
+            repository = repos;
+        }
+
         // GET: orders
         [HttpGet]
         public IEnumerable<Customer> Get()
