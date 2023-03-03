@@ -44,7 +44,7 @@ namespace CustomerApi.Controllers
             repository = repos;
         }
 
-        // GET: orders
+        // GET: customers
         [HttpGet]
         public IEnumerable<Customer> Get()
         {
