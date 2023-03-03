@@ -16,12 +16,12 @@ namespace CustomerApi.Data
             // Look for any Products
             if (context.Customers.Any())
             {
-                return;   // DB has been seeded
+                return; // DB has been seeded
             }
 
             List<Customer> customer = new List<Customer>
             {
-                //new Customer { Date = DateTime.Today, ProductId = 1, Quantity = 2 } FIX
+                new Customer { companyName = "Bad Company", registrationNumber = 1, emailAddress = "bcompanyofficial@bcompany.com", phoneNumber = "51223432" } // TODO Need Default Billing and Shipping Address
             };
 
             context.Customers.AddRange(customer);
