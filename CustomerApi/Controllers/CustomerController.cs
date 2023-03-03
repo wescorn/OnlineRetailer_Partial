@@ -51,7 +51,7 @@ namespace CustomerApi.Controllers
             return repository.GetAll();
         }
 
-        // register a custoemr
+        // POST: customer
         [HttpPost]
         public IActionResult Post ([FromBody] Customer Customer)
         {
@@ -60,8 +60,8 @@ namespace CustomerApi.Controllers
             return NoContent();
         }
 
-        // change customer information
-        [HttpPut]
+        // PUT: customer/5
+        [HttpPut("{id}")]
         public IActionResult Put ([FromBody] Customer Customer)
         {
             //Implement
