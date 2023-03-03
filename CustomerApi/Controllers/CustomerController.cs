@@ -1,5 +1,9 @@
-﻿using CustomerApi.Models;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using CustomerApi.Data;
+using CustomerApi.Models;
+using RestSharp;
 
 namespace CustomerApi.Controllers
 {
@@ -33,6 +37,15 @@ namespace CustomerApi.Controllers
     [Route("[controller]")]
     public class CustomerController : ControllerBase
     {
+        private readonly IRepository<Customer> repository;
+
+        // GET: orders
+        [HttpGet]
+        public IEnumerable<Customer> Get()
+        {
+            return repository.GetAll();
+        }
+
         // register a custoemr
         [HttpPost]
         public IActionResult Post ([FromBody] Customer Customer)
