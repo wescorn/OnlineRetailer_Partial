@@ -1,11 +1,11 @@
-﻿namespace CustomerApi.Controllers
+﻿using CustomerApi.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace CustomerApi.Controllers
 {
     /*  TO DO
      *  Register (company name and registration number, email address, phone number, billing and shipping address.)
         Change (email address, phone number, billing and shipping address.)
-        See an overview of past orders incl. order status
-        Cancel orders that haven't been dispatched
-        Make an Order - OrderApi
 
         When the online retail system receives an order, the following actions should take place:
         
@@ -29,7 +29,22 @@
 
         For each product, the following information should be available: Product registration number, name, price, category, the number of items in stock, and the number of items reserved.
      */
-    public class CustomerController
+    [ApiController]
+    [Route("[controller]")]
+    public class CustomerController : ControllerBase
     {
+        // register a custoemr
+        [HttpPost]
+        public void register(string companyName, string registrationNumber, string emailAddress, string phoneNumber, Address billingAddress, Address shippingAddress)
+        {
+            //Implement
+        }
+
+        // change customer information
+        [HttpPut]
+        public void change(string emailAddress, string phoneNumber, Address billingAddress, Address shippingAddress)
+        {
+            //Implement
+        }
     }
 }
